@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                scripts{
+                script{
                     int maxRetries = 3
                     int retryCount = 0  
                     boolean success = false
