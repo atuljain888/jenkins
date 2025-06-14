@@ -4,7 +4,6 @@ pipeline{
         stage('checkout'){
             steps{
                echo "TestBranch:::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-              touch testBranch.js
             }
         }
     }
