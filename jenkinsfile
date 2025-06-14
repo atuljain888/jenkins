@@ -12,7 +12,7 @@ pipeline{
                     boolean success = false
                     while (retryCount < maxRetries && !success) {
                         try {
-                            git 'https://github.com/atuljain888/DevOpsCodeDemo.git'
+                            git 'https://github.com/atuljain888/DevOpsCodeDemo.giat'
                             sh 'mvn compile'
                             success = true
                         }
