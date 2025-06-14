@@ -1,0 +1,31 @@
+pipeline{
+    tools{
+        maven 'mymaven'
+    } 
+    agent any
+    stages{
+        stage('checkout'){
+            steps{
+                scripts{
+                    int maxRetries = 3
+                    int retryCount = 0  
+                    boolean success = false
+                    while (retryCount < maxRetries && !success) {
+                        try {
+                            git 'https://github.com/atuljain888/DevOpsCodeDemo.git'
+                            sh 'mvn compile'
+                            success = true
+                        }
+                        catch (Exception e) {
+                            retryCount++
+                            if (retryCount >= maxRetries) {
+                                error "Failed to checkout repository after ${maxRetries} attempts"
+                            }
+                            echo "Retrying checkout... Attempt ${retryCount}"
+                        }
+                }  
+            }
+        }
+    }
+    }
+}
