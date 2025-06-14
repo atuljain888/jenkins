@@ -5,7 +5,7 @@ pipeline{
     agent any
     stages{
         stage('checkout'){
-            step{
+            steps{
                 scripts{
                     int maxRetries = 3
                     int retryCount = 0  
