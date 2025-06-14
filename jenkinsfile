@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-               echo "MainBranch:::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
-                touch mainBranch.js
+               echo "Preprod:::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
             }
         }
     }
